@@ -98,7 +98,7 @@ class LogicalCorrelateToJoinFromTemporalTableFunctionRule
           .getUnderlyingHistoryTable
         val rexBuilder = cluster.getRexBuilder
 
-        val relBuilder: FlinkRelBuilder = FlinkRelMdNonCumulativeCost.THREAD_PLANNER.get()
+        val relBuilder = FlinkRelMdNonCumulativeCost.THREAD_PLANNER.get()
           .getContext.unwrap(classOf[FlinkOptimizeContext]).getFlinkRelBuilder
 
         val temporalTable: RelNode = relBuilder.queryOperation(underlyingHistoryTable).build()
