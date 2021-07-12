@@ -33,9 +33,11 @@ import org.apache.flink.table.planner.plan.stats.FlinkStatistic
 import org.apache.flink.table.planner.plan.utils.FlinkRelOptUtil
 import org.apache.flink.table.planner.utils.TableConfigUtils
 import org.apache.flink.util.Preconditions
+
 import org.apache.calcite.rel.RelNode
 import org.apache.calcite.rel.core.TableScan
 import org.apache.calcite.rex.RexBuilder
+
 import java.util
 import java.util.Collections
 

@@ -18,12 +18,6 @@
 
 package org.apache.flink.table.planner.plan.rules.logical
 
-import org.apache.calcite.plan.RelOptRule.{any, none, operand, some}
-import org.apache.calcite.plan.{RelOptRule, RelOptRuleCall}
-import org.apache.calcite.rel.RelNode
-import org.apache.calcite.rel.core.{JoinRelType, TableFunctionScan}
-import org.apache.calcite.rel.logical.LogicalCorrelate
-import org.apache.calcite.rex._
 import org.apache.flink.table.api.ValidationException
 import org.apache.flink.table.expressions.{FieldReferenceExpression, _}
 import org.apache.flink.table.functions.{TemporalTableFunction, TemporalTableFunctionImpl}
@@ -38,6 +32,13 @@ import org.apache.flink.table.planner.plan.utils.{ExpandTableScanShuttle, RexDef
 import org.apache.flink.table.types.logical.LogicalTypeRoot.{TIMESTAMP_WITHOUT_TIME_ZONE, TIMESTAMP_WITH_LOCAL_TIME_ZONE}
 import org.apache.flink.table.types.logical.utils.LogicalTypeChecks.{hasRoot, isProctimeAttribute}
 import org.apache.flink.util.Preconditions.checkState
+
+import org.apache.calcite.plan.RelOptRule.{any, none, operand, some}
+import org.apache.calcite.plan.{RelOptRule, RelOptRuleCall}
+import org.apache.calcite.rel.RelNode
+import org.apache.calcite.rel.core.{JoinRelType, TableFunctionScan}
+import org.apache.calcite.rel.logical.LogicalCorrelate
+import org.apache.calcite.rex._
 
 /**
   * The initial temporal TableFunction join (LATERAL TemporalTableFunction(o.proctime)) is
