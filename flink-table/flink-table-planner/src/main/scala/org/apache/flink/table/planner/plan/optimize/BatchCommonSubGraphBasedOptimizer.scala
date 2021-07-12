@@ -27,8 +27,10 @@ import org.apache.flink.table.planner.plan.optimize.program.{BatchOptimizeContex
 import org.apache.flink.table.planner.plan.schema.IntermediateRelTable
 import org.apache.flink.table.planner.utils.TableConfigUtils
 import org.apache.flink.util.Preconditions
+
 import org.apache.calcite.rel.RelNode
 import org.apache.calcite.rex.RexBuilder
+
 import java.util.Collections
 
 /**
